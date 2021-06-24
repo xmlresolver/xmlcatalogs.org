@@ -45,10 +45,22 @@
     <xsl:if test="@status">
       <h2>
         <xsl:value-of select="@status"/>
-        <xsl:text> V</xsl:text>
-        <xsl:value-of select="db:info/db:productnumber"/>
+        <xsl:if test="db:info/db:productnumber">
+          <xsl:text> V</xsl:text>
+          <xsl:value-of select="db:info/db:productnumber"/>
+        </xsl:if>
         <xsl:text>, </xsl:text>
-        <xsl:value-of select="db:info/db:pubdate"/>
+        <xsl:choose>
+          <xsl:when test="db:info/db:pubdate castable as xs:date">
+            <xsl:variable name="date"
+                          select="xs:date(db:info/db:pubdate)"/>
+            <xsl:value-of select='format-date($date,
+			              "[D01] [MNn,*-3] [Y0001]")'/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="db:info/db:pubdate"/>
+          </xsl:otherwise>
+        </xsl:choose>
       </h2>
     </xsl:if>
     <dl>
