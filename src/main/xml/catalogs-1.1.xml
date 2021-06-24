@@ -6,8 +6,8 @@
 <!--ENTITY standard "Committee Specification"-->
 <!ENTITY standard "OASIS Standard">
 
-<!ENTITY namespaceURI "urn:oasis:names:tc:entity:xmlns:xml:catalog">
-<!ENTITY namespaceURItr9401 "urn:oasis:names:tc:entity:xmlns:tr9401:catalog">
+<!ENTITY namespaceURI "urn:oasis:names:­tc:entity:xmlns:­xml:catalog">
+<!ENTITY namespaceURItr9401 "urn:oasis:names:­tc:entity:xmlns:­tr9401:catalog">
 
 <!ENTITY uri "URI">
 <!ENTITY uriref "URI reference">
@@ -960,8 +960,8 @@ contains the following entries and only these entries:</para>
      uri="http://example.com/final/resource"/>]]></programlisting>
 
 <para>An attempt to resolve
-<literal>http://example.com/path/resource</literal> will return
-<quote><literal>http://example.com/alternate/resource</literal></quote>.
+<literal>http://example.com/­path/resource</literal> will return
+<quote><literal>http://example.com/­alternate/resource</literal></quote>.
 The fact that the URI returned would be subject to a different
 interpretation if <emphasis>it</emphasis> was passed to the resolver
 has no effect on the resolver: it stops when a match is found. (This example uses
@@ -1497,7 +1497,7 @@ the matching entry with the longest normalized
 <para>The first two entries match the system identifier
 <quote>http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd</quote>,
 but the third does not. The rewritten system identifier in this case
-is: <quote>file:///sourceforge/docbook/docbook/xml/4.1.2/docbookx.dtd</quote>.
+is: <quote>file:///sourceforge/docbook/­docbook/xml/4.1.2/docbookx.dtd</quote>.
 </para>
 
 </section>
@@ -2247,7 +2247,7 @@ semantics of all existing elements remain unchanged.</para>
 
 <itemizedlist>
 <listitem><para>System identifier:
-<literal>http://www.oasis-open.org/committees/entity/release/1.1/catalog.xsd</literal>
+<literal>http://www.oasis-open.org/committees/­entity/release/­1.1/catalog.xsd</literal>
 </para>
 </listitem>
 </itemizedlist>
@@ -2267,7 +2267,7 @@ semantics of all existing elements remain unchanged.</para>
 
 <itemizedlist>
 <listitem><para>System identifier:
-<literal>http://www.oasis-open.org/committees/entity/release/1.1/catalog.rng</literal>
+<literal>http://www.oasis-open.org/committees/­entity/release/­1.1/catalog.rng</literal>
 </para>
 </listitem>
 </itemizedlist>
@@ -2297,7 +2297,7 @@ OASIS XML Catalog &standard; entry files.</para>
 </para>
 </listitem>
 <listitem><para>System identifier:
-<literal>http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd</literal>
+<literal>http://www.oasis-open.org/committees/­entity/release/­1.1/catalog.dtd</literal>
 </para>
 </listitem>
 </itemizedlist>
