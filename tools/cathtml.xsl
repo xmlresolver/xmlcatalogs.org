@@ -25,7 +25,8 @@
 
 <xsl:template match="db:article" mode="m:generate-titlepage">
   <header>
-    <xsl:if test="not(contains(db:info/db:title, 'Annotations'))">
+    <xsl:if test="not(contains(db:info/db:title, 'Annotations'))
+                  and not(contains(@status, 'Annotations'))">
       <div class="disclaimer">
         <p>This is an unofficial copy of the
         <a href="https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html">official
