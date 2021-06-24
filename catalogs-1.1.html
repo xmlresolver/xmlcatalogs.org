@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>XML Catalogs</title><link href="./css/pygments.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"><meta name="dc.modified" content="2021-06-24T09:28:20Z"><meta name="dc.created" content="7 October 2005"><meta name="generator" content="DocBook xslTNG version 1.5.2-SNAPSHOT / 7dfb7462 / SAXON HE 10.5"><link href="./css/docbook.css" rel="stylesheet"><link href="./css/docbook-screen.css" rel="stylesheet"><link href="./css/catalogs.css" rel="stylesheet"><link href="./css/docbook-toc.css" rel="stylesheet"></head><body class="home"><nav class="top"></nav><main><article id="xml-catalogs" class="OASIS Standard article"><a class="annomark" href="#xml-catalogs_annotation1" db-annotation="xml-catalogs_annotation1"><sup>⌖</sup><sup class="num">1</sup></a><header><div class="disclaimer"><p>This is an unofficial copy of the
+<!DOCTYPE HTML><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>XML Catalogs</title><link href="./css/pygments.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"><meta name="dc.modified" content="2021-06-24T19:48:29Z"><meta name="dc.created" content="7 October 2005"><meta name="generator" content="DocBook xslTNG version 1.5.2-SNAPSHOT / 7dfb7462 / SAXON HE 10.5"><link href="./css/docbook.css" rel="stylesheet"><link href="./css/docbook-screen.css" rel="stylesheet"><link href="./css/catalogs.css" rel="stylesheet"><link href="./css/docbook-toc.css" rel="stylesheet"></head><body class="home"><nav class="top"></nav><main><article id="xml-catalogs" class="OASIS Standard article"><a class="annomark" href="#xml-catalogs_annotation1" db-annotation="xml-catalogs_annotation1"><sup>⌖</sup><sup class="num">1</sup></a><header><div class="disclaimer"><p>This is an unofficial copy of the
         <a href="https://www.oasis-open.org/committees/download.php/14809/xml-catalogs.html">official
         OASIS standard</a>.
         It’s been run it through some more modern stylesheets and
@@ -140,7 +140,7 @@ the semantics described herein.
 </p><p>The
 <a href="http://www.w3.org/TR/REC-xml-names/#dt-NSName" class="link">namespace
 name</a> defined by this OASIS Standard is
-<q><code class="literal">urn:oasis:names:tc:entity:xmlns:xml:catalog</code></q>. The public identifier
+<q><code class="literal">urn:oasis:names:­tc:entity:xmlns:­xml:catalog</code></q>. The public identifier
 for XML Catalogs is
 <q><code class="literal">-//OASIS//DTD XML Catalogs V1.1//EN</code></q>.</p><p>This OASIS Standard reserves all elements and attributes from its
 namespace for current and future use. In addition, unqualified
@@ -498,8 +498,8 @@ contains the following entries and only these entries:</p><div class="pre-wrap" 
 <span class="line" db-line="4"><span class="ln"></span><span class="ld"><code>&lt;uri name="http://example.com/alternate/resource"</code></span></span>
 <span class="line" db-line="5"><span class="ln">5</span><span class="ld"><code>     uri="http://example.com/final/resource"/&gt;</code></span></span>
 </pre></div><p>An attempt to resolve
-<code class="literal">http://example.com/path/resource</code> will return
-<q><code class="literal">http://example.com/alternate/resource</code></q>.
+<code class="literal">http://example.com/­path/resource</code> will return
+<q><code class="literal">http://example.com/­alternate/resource</code></q>.
 The fact that the URI returned would be subject to a different
 interpretation if <em>it</em> was passed to the resolver
 has no effect on the resolver: it stops when a match is found. (This example uses
@@ -589,33 +589,15 @@ and
 in one of the following sections.</p><section id="s.catalog" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>1<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">catalog</code> Entry</h4></header><p>Each XML Catalog entry file consists of a single
 <code class="tag tag-element">catalog</code> element. This element may set the global
 <code class="tag tag-attribute">prefer</code> value and global base URI.
-It is otherwise just a container for the other elements.</p><div class="element-syntax" id="element-catalog"><pre><code>&lt;catalog
-    id = <span class="datatype">id</span>
-    prefer = "system" | "public"
-    xml:base = <span class="datatype">uri-reference</span>
-  &lt;!-- Content: (<a href="#element-group">group</a> | <a href="#element-public">public</a> | <a href="#element-system">system</a> | <a href="#element-rewriteSystem">rewriteSystem</a> | <a href="#element-systemSuffix">systemSuffix</a>
-                 | <a href="#element-delegatePublic">delegatePublic</a> | <a href="#element-delegateSystem">delegateSystem</a> | <a href="#element-uri">uri</a> | <a href="#element-rewriteURI">rewriteURI</a>
-                 | <a href="#element-uriSuffix">uriSuffix</a> | <a href="#element-delegateURI">delegateURI</a> | <a href="#element-nextCatalog">nextCatalog</a>)+ --&gt;
-&lt;/catalog&gt;</code></pre></div></section><section id="s.group" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>2<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">group</code> Entry</h4></header><p>The <code class="tag tag-element">group</code> element is a convenience wrapper
+It is otherwise just a container for the other elements.</p><div class="element-syntax" id="element-catalog"><div class="e-stag"><code>&lt;catalog</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>prefer = "system" |&nbsp;"public"</code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span></code></div><div class="e-choice"><code>  &lt;!-- Content: (</code><code><a href="#element-group">group</a></code> |&nbsp;<code><a href="#element-public">public</a></code> |&nbsp;<code><a href="#element-system">system</a></code> |&nbsp;<code><a href="#element-rewriteSystem">rewriteSystem</a></code> |&nbsp;<code><a href="#element-systemSuffix">systemSuffix</a></code> |&nbsp;<code><a href="#element-delegatePublic">delegatePublic</a></code> |&nbsp;<code><a href="#element-delegateSystem">delegateSystem</a></code> |&nbsp;<code><a href="#element-uri">uri</a></code> |&nbsp;<code><a href="#element-rewriteURI">rewriteURI</a></code> |&nbsp;<code><a href="#element-uriSuffix">uriSuffix</a></code> |&nbsp;<code><a href="#element-delegateURI">delegateURI</a></code> |&nbsp;<code><a href="#element-nextCatalog">nextCatalog</a></code><code>)+ --&gt;</code></div><div class="e-etag"><code>&lt;/catalog&gt;</code></div></div></section><section id="s.group" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>2<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">group</code> Entry</h4></header><p>The <code class="tag tag-element">group</code> element is a convenience wrapper
 for specifying a <code class="tag tag-attribute">prefer</code> setting
 or base URI for a set of catalog entries.  It has no semantics other
 than scoping these settings.
-</p><div class="element-syntax" id="element-group"><pre><code>&lt;group
-    id = <span class="datatype">id</span>
-    prefer = "system" | "public"
-    xml:base = <span class="datatype">uri-reference</span>
-  &lt;!-- Content: (<a href="#element-public">public</a> | <a href="#element-system">system</a> | <a href="#element-rewriteSystem">rewriteSystem</a> | <a href="#element-systemSuffix">systemSuffix</a>
-                 | <a href="#element-delegatePublic">delegatePublic</a> | <a href="#element-delegateSystem">delegateSystem</a> | <a href="#element-uri">uri</a> | <a href="#element-rewriteURI">rewriteURI</a>
-                 | <a href="#element-uriSuffix">uriSuffix</a> | <a href="#element-delegateURI">delegateURI</a> | <a href="#element-nextCatalog">nextCatalog</a>)+ --&gt;
-&lt;/group&gt;</code></pre></div><div class="admonition note"><div><div class="icon">🛈︎</div><div class="body"><header><div class="title">Note</div></header><div><p>The ability to scope the <code class="tag tag-attribute">prefer</code> and
+</p><div class="element-syntax" id="element-group"><div class="e-stag"><code>&lt;group</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>prefer = "system" |&nbsp;"public"</code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span></code></div><div class="e-choice"><code>  &lt;!-- Content: (</code><code><a href="#element-public">public</a></code> |&nbsp;<code><a href="#element-system">system</a></code> |&nbsp;<code><a href="#element-rewriteSystem">rewriteSystem</a></code> |&nbsp;<code><a href="#element-systemSuffix">systemSuffix</a></code> |&nbsp;<code><a href="#element-delegatePublic">delegatePublic</a></code> |&nbsp;<code><a href="#element-delegateSystem">delegateSystem</a></code> |&nbsp;<code><a href="#element-uri">uri</a></code> |&nbsp;<code><a href="#element-rewriteURI">rewriteURI</a></code> |&nbsp;<code><a href="#element-uriSuffix">uriSuffix</a></code> |&nbsp;<code><a href="#element-delegateURI">delegateURI</a></code> |&nbsp;<code><a href="#element-nextCatalog">nextCatalog</a></code><code>)+ --&gt;</code></div><div class="e-etag"><code>&lt;/group&gt;</code></div></div><div class="admonition note"><div><div class="icon">🛈︎</div><div class="body"><header><div class="title">Note</div></header><div><p>The ability to scope the <code class="tag tag-attribute">prefer</code> and
 and base URI settings is required in order to reasonably translate existing
 <a href="#tr9401" class="xref xref-bibliomixed"><span><span class="xreftitle"><span class="abbrev">TR 9401</span></span></span></a> catalogs into XML Catalogs.</p></div></div></div></div></section><section id="s.public" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>3<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">public</code> Entry</h4></header><p>The <code class="tag tag-element">public</code> element associates a URI reference with
 the <em class="glossterm">public identifier</em> portion of an
-<em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-public"><pre><code>&lt;public
-    id = <span class="datatype">id</span>
-    publicId = <span class="datatype">public-identifier</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">public</code> entry matches a public identifier
+<em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-public"><div class="e-stag"><code>&lt;public</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>publicId = <span class="datatype">public-identifier</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">public</code> entry matches a public identifier
 if the normalized value (<a href="#pubid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>2, </span><span class="xreftitle">Public Identifier Normalization</span></span></a>) of the
 public identifier is lexically identical
 to the normalized value of the
@@ -625,11 +607,7 @@ is relative, it must be made absolute with respect to the
 base URI currently in effect. The URI reference should not include a
 fragment identifier.</p></section><section id="s.system" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>4<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">system</code> Element</h4></header><p>The <code class="tag tag-element">system</code> element associates a URI reference with
 the <em class="glossterm">system identifier</em> portion of an
-<em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-system"><pre><code>&lt;system
-    id = <span class="datatype">id</span>
-    systemId = <span class="datatype">string</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">system</code> entry matches a system identifier
+<em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-system"><div class="e-stag"><code>&lt;system</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>systemId = <span class="datatype">string</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">system</code> entry matches a system identifier
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 system identifier is lexically identical
 to the normalized value of the
@@ -638,10 +616,7 @@ entry.</p><p>If the value of the <code class="tag tag-attribute">uri</code> attr
 is relative, it must be made absolute with respect to the
 base URI currently in effect. The URI reference should not include a
 fragment identifier.</p></section><section id="s.rewritesystem" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>5<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">rewriteSystem</code> Element</h4></header><p>The <code class="tag tag-element">rewriteSystem</code> element rewrites the beginning
-of a system identifier.</p><div class="element-syntax" id="element-rewriteSystem"><pre><code>&lt;rewriteSystem
-    id = <span class="datatype">id</span>
-    systemIdStartString = <span class="datatype">string</span>
-    rewritePrefix = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">rewriteSystem</code> entry matches a system identifier
+of a system identifier.</p><div class="element-syntax" id="element-rewriteSystem"><div class="e-stag"><code>&lt;rewriteSystem</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>systemIdStartString = <span class="datatype">string</span></code></div><div class="e-attr"><code>rewritePrefix = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">rewriteSystem</code> entry matches a system identifier
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 system identifier begins precisely with the
 normalized value of the
@@ -664,14 +639,10 @@ the matching entry with the longest normalized
 </pre></div><p>The first two entries match the system identifier
 <q>http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd</q>,
 but the third does not. The rewritten system identifier in this case
-is: <q>file:///sourceforge/docbook/docbook/xml/4.1.2/docbookx.dtd</q>.
+is: <q>file:///sourceforge/docbook/­docbook/xml/4.1.2/docbookx.dtd</q>.
 </p></section><section id="s.systemsuffix" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>6<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">systemSuffix</code> Element</h4></header><p>The <code class="tag tag-element">systemSuffix</code> element associates a URI reference
 with the <em>suffix</em> portion of a
-<em>system identifier</em>.</p><div class="element-syntax" id="element-systemSuffix"><pre><code>&lt;systemSuffix
-    id = <span class="datatype">id</span>
-    systemIdSuffix = <span class="datatype">string</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">systemSuffix</code> entry matches a system identifier
+<em>system identifier</em>.</p><div class="element-syntax" id="element-systemSuffix"><div class="e-stag"><code>&lt;systemSuffix</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>systemIdSuffix = <span class="datatype">string</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">systemSuffix</code> entry matches a system identifier
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 system identifier ends precisely with the
 normalized value of the
@@ -692,11 +663,7 @@ the matching entry with the longest normalized
 matches
 <q>file:/C|/local/backup/4.3/docbookx.dtd</q> because
 “<code class="literal">4.3/docbookx.dtd</code>” is the longer suffix.</p></section><section id="s.delegatepublic" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>7<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">delegatePublic</code> Element</h4></header><p>The <code class="tag tag-element">delegatePublic</code> element associates an alternate
-catalog with a partial public identifier.</p><div class="element-syntax" id="element-delegatePublic"><pre><code>&lt;delegatePublic
-    id = <span class="datatype">id</span>
-    publicIdStartString = <span class="datatype">public-identifier-prefix</span>
-    catalog = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">delegatePublic</code> entry matches a public identifier
+catalog with a partial public identifier.</p><div class="element-syntax" id="element-delegatePublic"><div class="e-stag"><code>&lt;delegatePublic</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>publicIdStartString = <span class="datatype">public-identifier-prefix</span></code></div><div class="e-attr"><code>catalog = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">delegatePublic</code> entry matches a public identifier
 if the normalized value (<a href="#pubid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>2, </span><span class="xreftitle">Public Identifier Normalization</span></span></a>) of the
 public identifier begins precisely with
 the normalized value of the
@@ -713,11 +680,7 @@ entry.</p><p>Given the following catalog fragment:</p><div class="pre-wrap" db-s
 attribute is relative, it must be made absolute with respect to the
 base URI currently in
 effect.</p></section><section id="s.delegatesystem" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>8<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">delegateSystem</code> Element</h4></header><p>The <code class="tag tag-element">delegateSystem</code> element associates an alternate
-catalog with a partial system identifier.</p><div class="element-syntax" id="element-delegateSystem"><pre><code>&lt;delegateSystem
-    id = <span class="datatype">id</span>
-    systemIdStartString = <span class="datatype">string</span>
-    catalog = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">delegateSystem</code> entry matches a system identifier
+catalog with a partial system identifier.</p><div class="element-syntax" id="element-delegateSystem"><div class="e-stag"><code>&lt;delegateSystem</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>systemIdStartString = <span class="datatype">string</span></code></div><div class="e-attr"><code>catalog = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">delegateSystem</code> entry matches a system identifier
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 system identifier begins precisely with the normalized value of the
 <code class="tag tag-attribute">systemIdStartString</code> attribute of the
@@ -734,11 +697,7 @@ but the third does not.
 attribute is relative, it must be made absolute with respect to the
 base URI currently in
 effect.</p></section><section id="s.uri" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>9<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">uri</code> Element</h4></header><p>The <code class="tag tag-element">uri</code> element associates an alternate URI reference with
-a URI reference that is not part of an <em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-uri"><pre><code>&lt;uri
-    id = <span class="datatype">id</span>
-    name = <span class="datatype">string</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">uri</code> entry matches a URI reference
+a URI reference that is not part of an <em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-uri"><div class="e-stag"><code>&lt;uri</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>name = <span class="datatype">string</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">uri</code> entry matches a URI reference
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>)
 of the URI reference is lexically identical
 to the normalized value of the
@@ -754,10 +713,7 @@ but the first does not.
 attribute is relative, it must be made absolute with respect to the
 base URI currently in
 effect.</p></section><section id="s.rewriteuri" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>10<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">rewriteURI</code> Element</h4></header><p>The <code class="tag tag-element">rewriteURI</code> element rewrites the beginning of
-a URI reference that is not part of an <em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-rewriteURI"><pre><code>&lt;rewriteURI
-    id = <span class="datatype">id</span>
-    uriStartString = <span class="datatype">string</span>
-    rewritePrefix = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">rewriteURI</code> entry matches a URI reference
+a URI reference that is not part of an <em class="glossterm">external identifier</em>.</p><div class="element-syntax" id="element-rewriteURI"><div class="e-stag"><code>&lt;rewriteURI</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>uriStartString = <span class="datatype">string</span></code></div><div class="e-attr"><code>rewritePrefix = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">rewriteURI</code> entry matches a URI reference
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 URI reference begins precisely with the normalized value of the
 <code class="tag tag-attribute">uriStartString</code> attribute of the
@@ -770,11 +726,7 @@ and replaces it with the value of the value of the
 the matching entry with the longest normalized
 <code class="tag tag-attribute">uriStartString</code> value is used.</p></section><section id="s.urisuffix" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>11<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">uriSuffix</code> Element</h4></header><p>The <code class="tag tag-element">uriSuffix</code> element associates a URI reference
 with the <em>suffix</em> portion of a URI reference that
-is not part of an <em>external identifier</em>.</p><div class="element-syntax" id="element-uriSuffix"><pre><code>&lt;uriSuffix
-    id = <span class="datatype">id</span>
-    uriSuffix = <span class="datatype">string</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">uriSuffix</code> entry matches a URI
+is not part of an <em>external identifier</em>.</p><div class="element-syntax" id="element-uriSuffix"><div class="e-stag"><code>&lt;uriSuffix</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>uriSuffix = <span class="datatype">string</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">uriSuffix</code> entry matches a URI
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 URI ends precisely with the
 normalized value of the
@@ -786,11 +738,7 @@ currently in effect.</p><p>If more than one <code class="tag tag-element">uriSuf
 the matching entry with the longest normalized
 <code class="tag tag-attribute">uriSuffix</code> value is used.
 </p></section><section id="s.delegateuri" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>12<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">delegateURI</code> Element</h4></header><p>The <code class="tag tag-element">delegateURI</code> element associates an alternate
-catalog with a partial URI reference.</p><div class="element-syntax" id="element-delegateURI"><pre><code>&lt;delegateURI
-    id = <span class="datatype">id</span>
-    uriStartString = <span class="datatype">string</span>
-    catalog = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>A <code class="tag tag-element">delegateURI</code> entry matches a URI reference
+catalog with a partial URI reference.</p><div class="element-syntax" id="element-delegateURI"><div class="e-stag"><code>&lt;delegateURI</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>uriStartString = <span class="datatype">string</span></code></div><div class="e-attr"><code>catalog = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>A <code class="tag tag-element">delegateURI</code> entry matches a URI reference
 if the normalized value (<a href="#sysid-norm" class="xref xref-section"><span><span class="label">Section<span class="sep">&nbsp;</span></span><span class="number">6<span class="sep">.</span>3, </span><span class="xreftitle">System Identifier and URI Normalization</span></span></a>) of the
 URI reference begins precisely with the normalized value of the
 <code class="tag tag-attribute">uriStartString</code> attribute of the
@@ -798,10 +746,7 @@ entry.</p><p>If the value of the <code class="tag tag-attribute">catalog</code>
 attribute is relative, it must be made absolute with respect to the
 base URI currently in effect.</p></section><section id="s.nextcatalog" class="section"><header><h4><span class="number">6<span class="sep">.</span>5<span class="sep">.</span>13<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">nextCatalog</code> Element</h4></header><p>The <code class="tag tag-element">nextCatalog</code> elements indicate additional
 catalog entry file(s) to be considered during the process of resolution.
-</p><div class="element-syntax" id="element-nextCatalog"><pre><code>&lt;nextCatalog
-    id = <span class="datatype">id</span>
-    catalog = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div><p>If the value of the <code class="tag tag-attribute">catalog</code>
+</p><div class="element-syntax" id="element-nextCatalog"><div class="e-stag"><code>&lt;nextCatalog</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>catalog = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div><p>If the value of the <code class="tag tag-attribute">catalog</code>
 attribute is relative, it must be made absolute with respect to the
 base URI currently in
 effect.</p><p>Catalogs loaded due to a <code class="tag tag-element">nextCatalog</code>
@@ -997,7 +942,7 @@ could not be loaded.</p><p>In order for a resource to be considered an XML Catal
 conditions must hold:</p><ol class="orderedlist" type="1"><li><p>The resource retrieved must be well-formed <a href="#xml-rec" class="xref xref-bibliomixed"><span><span class="xreftitle"><span class="abbrev">XML</span></span></span></a> consistent with <a href="#xml-names" class="xref xref-bibliomixed"><span><span class="xreftitle"><span class="abbrev">XML Namespaces</span></span></span></a>.
 </p></li><li><p>The root element must be <code class="tag tag-element">catalog</code>.
 </p></li><li><p>The namespace name of the root element must be
-<code class="literal">urn:oasis:names:tc:entity:xmlns:xml:catalog</code>.
+<code class="literal">urn:oasis:names:­tc:entity:xmlns:­xml:catalog</code>.
 </p></li></ol><p>It is not an error for catalog processors to accept other forms
 of catalog documents, but their identification and specification is
 outside the scope of this OASIS Standard.
@@ -1012,7 +957,7 @@ semantics of all existing elements remain unchanged.</p></section><div id="a.w3c
 OASIS Standard entry files.</p><p>This grammar has the following identifier:
 
 <ul class="itemizedlist"><li><p>System identifier:
-<code class="literal">http://www.oasis-open.org/committees/entity/release/1.1/catalog.xsd</code>
+<code class="literal">http://www.oasis-open.org/committees/­entity/release/­1.1/catalog.xsd</code>
 </p></li></ul>
 </p><div class="pre-wrap" db-startinglinenumber="1" db-numberoflines="229"><pre class="language-none long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln">1</span><span class="ld"><code>&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"</code></span></span>
 <span class="line" db-line="2"><span class="ln"></span><span class="ld"><code>           xmlns:er="urn:oasis:names:tc:entity:xmlns:xml:catalog"</code></span></span>
@@ -1247,7 +1192,7 @@ OASIS Standard entry files.</p><p>This grammar has the following identifier:
 OASIS Standard entry files.</p><p>This grammar has the following identifier:
 
 <ul class="itemizedlist"><li><p>System identifier:
-<code class="literal">http://www.oasis-open.org/committees/entity/release/1.1/catalog.rng</code>
+<code class="literal">http://www.oasis-open.org/committees/­entity/release/­1.1/catalog.rng</code>
 </p></li></ul>
 </p><div class="pre-wrap" db-startinglinenumber="1" db-numberoflines="242"><pre class="language-none long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln">1</span><span class="ld"><code>&lt;grammar xmlns="http://relaxng.org/ns/structure/1.0"</code></span></span>
 <span class="line" db-line="2"><span class="ln"></span><span class="ld"><code>         ns="urn:oasis:names:tc:entity:xmlns:xml:catalog"</code></span></span>
@@ -1496,7 +1441,7 @@ partially<sup id="a.dtd_para1_footnote1-fref" db-footnote="1" class="footnote-nu
 OASIS XML Catalog OASIS Standard entry files.</p><p>This DTD has the following identifiers:</p><ul class="itemizedlist"><li><p>Public identifier:
 <code class="literal">-//OASIS//DTD XML Catalogs V1.1//EN</code>
 </p></li><li><p>System identifier:
-<code class="literal">http://www.oasis-open.org/committees/entity/release/1.1/catalog.dtd</code>
+<code class="literal">http://www.oasis-open.org/committees/­entity/release/­1.1/catalog.dtd</code>
 </p></li></ul><div class="pre-wrap" db-startinglinenumber="1" db-numberoflines="173"><pre class="language-none long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln">1</span><span class="ld"><code>&lt;!-- $Id: catalog.dtd,v 1.14 2005/04/13 20:47:06 ndw Exp $ --&gt;</code></span></span>
 <span class="line" db-line="2"><span class="ln"></span><span class="ld"><code> </code></span></span>
 <span class="line" db-line="3"><span class="ln"></span><span class="ld"><code>&lt;!ENTITY % pubIdChars "CDATA"&gt;</code></span></span>
@@ -1677,41 +1622,15 @@ defines the elements that should be used for the remaining
 TR9401 catalog entry types.</p><p>The elements described in this appendix provide full TR9401
 semantics in the XML Catalog format. These are implemented as
 extension elements in the namespace:
-<q><code class="literal">urn:oasis:names:tc:entity:xmlns:tr9401:catalog</code></q>.</p><p>For a complete description of the semantics of these elements
+<q><code class="literal">urn:oasis:names:­tc:entity:xmlns:­tr9401:catalog</code></q>.</p><p>For a complete description of the semantics of these elements
 see <a href="#tr9401" class="xref xref-bibliomixed"><span><span class="xreftitle"><span class="abbrev">TR 9401</span></span></span></a>.</p><section id="s.doctype" class="section"><header><h2><span class="number">1<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">doctype</code> Element</h2></header><p>The <code class="tag tag-element">doctype</code> element associates a DTD with
-a document element.</p><div class="element-syntax" id="element-doctype"><pre><code>&lt;doctype
-    id = <span class="datatype">id</span>
-    name = <span class="datatype">name</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section><section id="s.document" class="section"><header><h2><span class="number">2<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">document</code> Element</h2></header><p>The <code class="tag tag-element">document</code> element identifies a default
-document.</p><div class="element-syntax" id="element-document"><pre><code>&lt;document
-    id = <span class="datatype">id</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section><section id="s.dtddecl" class="section"><header><h2><span class="number">3<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">dtddecl</code> Element</h2></header><p>The <code class="tag tag-element">dtddecl</code> element associates an SGML declaration
-with a public identifier.</p><div class="element-syntax" id="element-dtddecl"><pre><code>&lt;dtddecl
-    id = <span class="datatype">id</span>
-    publicId = <span class="datatype">public-identifier</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section><section id="s.entity" class="section"><header><h2><span class="number">4<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">entity</code> Element</h2></header><p>The <code class="tag tag-element">entity</code> element associates a document with
-an entity name.</p><div class="element-syntax" id="element-entity"><pre><code>&lt;entity
-    id = <span class="datatype">id</span>
-    name = <span class="datatype">name</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section><section id="s.linktype" class="section"><header><h2><span class="number">5<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">linktype</code> Element</h2></header><p>The <code class="tag tag-element">linktype</code> element associates an external
-subset with a linktype declaration name.</p><div class="element-syntax" id="element-linktype"><pre><code>&lt;linktype
-    id = <span class="datatype">id</span>
-    name = <span class="datatype">name</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section><section id="s.notation" class="section"><header><h2><span class="number">6<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">notation</code> Element</h2></header><p>The <code class="tag tag-element">notation</code> element associates a URI reference with
-a notation name.</p><div class="element-syntax" id="element-notation"><pre><code>&lt;notation
-    id = <span class="datatype">id</span>
-    name = <span class="datatype">name</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section><section id="s.sgmldecl" class="section"><header><h2><span class="number">7<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">sgmldecl</code> Element</h2></header><p>The <code class="tag tag-element">sgmldecl</code> element provides the location of
-a default SGML declaration.</p><div class="element-syntax" id="element-sgmldecl"><pre><code>&lt;sgmldecl
-    id = <span class="datatype">id</span>
-    uri = <span class="datatype">uri-reference</span>
-    xml:base = <span class="datatype">uri-reference</span> /&gt;</code></pre></div></section></div><div id="a.committee" class="appendix non-normative"><header><h2><span class="label">Appendix<span class="sep">&nbsp;</span></span><span class="number">E<span class="sep">. </span></span>OASIS Entity Resolution Committee</h2></header><p>The following individuals are members of the committee that developed
+a document element.</p><div class="element-syntax" id="element-doctype"><div class="e-stag"><code>&lt;doctype</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>name = <span class="datatype">name</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section><section id="s.document" class="section"><header><h2><span class="number">2<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">document</code> Element</h2></header><p>The <code class="tag tag-element">document</code> element identifies a default
+document.</p><div class="element-syntax" id="element-document"><div class="e-stag"><code>&lt;document</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section><section id="s.dtddecl" class="section"><header><h2><span class="number">3<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">dtddecl</code> Element</h2></header><p>The <code class="tag tag-element">dtddecl</code> element associates an SGML declaration
+with a public identifier.</p><div class="element-syntax" id="element-dtddecl"><div class="e-stag"><code>&lt;dtddecl</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>publicId = <span class="datatype">public-identifier</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section><section id="s.entity" class="section"><header><h2><span class="number">4<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">entity</code> Element</h2></header><p>The <code class="tag tag-element">entity</code> element associates a document with
+an entity name.</p><div class="element-syntax" id="element-entity"><div class="e-stag"><code>&lt;entity</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>name = <span class="datatype">name</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section><section id="s.linktype" class="section"><header><h2><span class="number">5<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">linktype</code> Element</h2></header><p>The <code class="tag tag-element">linktype</code> element associates an external
+subset with a linktype declaration name.</p><div class="element-syntax" id="element-linktype"><div class="e-stag"><code>&lt;linktype</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>name = <span class="datatype">name</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section><section id="s.notation" class="section"><header><h2><span class="number">6<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">notation</code> Element</h2></header><p>The <code class="tag tag-element">notation</code> element associates a URI reference with
+a notation name.</p><div class="element-syntax" id="element-notation"><div class="e-stag"><code>&lt;notation</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>name = <span class="datatype">name</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section><section id="s.sgmldecl" class="section"><header><h2><span class="number">7<span class="sep">&nbsp;</span></span>The <code class="tag tag-element">sgmldecl</code> Element</h2></header><p>The <code class="tag tag-element">sgmldecl</code> element provides the location of
+a default SGML declaration.</p><div class="element-syntax" id="element-sgmldecl"><div class="e-stag"><code>&lt;sgmldecl</code></div><div class="e-attr"><code>id = <span class="datatype">id</span></code></div><div class="e-attr"><code>uri = <span class="datatype">uri-reference</span></code></div><div class="e-attr"><code>xml:base = <span class="datatype">uri-reference</span> /&gt;</code></div></div></section></div><div id="a.committee" class="appendix non-normative"><header><h2><span class="label">Appendix<span class="sep">&nbsp;</span></span><span class="number">E<span class="sep">. </span></span>OASIS Entity Resolution Committee</h2></header><p>The following individuals are members of the committee that developed
 this OASIS Standard:</p><div class="simplelist simplelistvert"><div class="row"><span>Adam Di Carlo, Debian</span></div><div class="row"><span>Anthony Coates, Individual Member</span></div><div class="row"><span>Paul Grosso, Arbortext</span></div><div class="row"><span>Mark Johnson, Debian</span></div><div class="row"><span>Jirka Kosek, Individual Member</span></div><div class="row"><span>Craig Salter, IBM</span></div><div class="row"><span>Norman Walsh, Sun Microsystems (Editor)</span></div><div class="row"><span>Lauren Wood, Individual Member (Chair)</span></div></div><p>The following additional individuals were members of the committee
 during the development of previous versions:</p><div class="simplelist simplelistvert"><div class="row"><span>John Cowan, Reuters Health</span></div><div class="row"><span>David Leland, Elsevier Science London</span></div><div class="row"><span>Normand Montour, IBM</span></div></div></div><div id="a.notices" class="appendix"><header><h2><span class="label">Appendix<span class="sep">&nbsp;</span></span><span class="number">F<span class="sep">. </span></span>Notices</h2></header><p>Copyright © The Organization for the Advancement of
 Structured Information Standards [OASIS]
