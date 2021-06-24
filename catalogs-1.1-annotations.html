@@ -1,0 +1,35 @@
+<!DOCTYPE HTML><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>XML Catalogs 1.1 Annotations</title><link href="./css/pygments.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"><meta name="dc.modified" content="2021-06-24T09:28:17Z"><meta name="dc.created" content="2021-06-24"><meta name="generator" content="DocBook xslTNG version 1.5.2-SNAPSHOT / 7dfb7462 / SAXON HE 10.5"><link href="./css/docbook.css" rel="stylesheet"><link href="./css/docbook-screen.css" rel="stylesheet"><link href="./css/catalogs.css" rel="stylesheet"></head><body class="home"><nav class="top"></nav><main><article class="article"><header><h1>XML Catalogs 1.1 Annotations</h1><dl><dt><span class="editor-heading">Editor</span></dt><dd><span class="editor"><span class="first-last personname"><span class="firstname">Norman</span> <span class="surname">Walsh</span></span>, <span class="affiliation"> &lt;<a href="mailto:ndw@nwalsh.com"><code class="email">ndw@nwalsh.com</code></a>&gt;</span></span></dd><dt><span class="abstract-heading">Abstract:</span></dt><dd><div class="abstract"><p>This document summarizes a set of annotations on the
+<a href="catalogs-1.1.html" class="link">XML Catalogs 1.1</a> specification.</p></div></dd><dt><span class="status-heading">Status:</span></dt><dd><p>Norman Walsh is solely responsible for these annotations. They have
+not been reviewed by any OASIS Technical Committee and have no normative standing
+whatsoever.</p></dd></dl><div class="copyright">Copyright © <span class="copyright-years"><span class="year">2021</span></span> <span class="holder">Norman Walsh</span></div></header><p>The following annotations have been added to the
+<i class="citetitle"><a href="https://xmlcatalogs.org/xmlcatalogs-1.1.html"><a href="https://xmlcatalogs.org/xmlcatalogs-1.1.html">XML Catalogs 1.1</a></a></i>
+specification published at <a href="https://xmlcatalogs.org/" class="link">https://xmlcatalogs.org/</a>:</p><ol class="orderedlist" type="1"><li><p>In both tables in <a href="catalogs-1.1.html#attrib.prefer" class="link">4.1.1 The
+prefer attribute</a>, the “N/A” entry in column four of row two has been annotated
+as follows:</p><blockquote class="blockquote"><p>The “N/A” in this cell is a little bit misleading. It’s marked as
+not applicable because if the external identifier doesn’t specify a system
+identifier then there <em>can’t</em> be <em>both</em> matching
+public and matching system entries. If there’s a matching public entry, it will be used,
+as shown in the first column.
+</p></blockquote></li><li><p>In both tables in <a href="catalogs-1.1.html#attrib.prefer" class="link">4.1.1 The
+prefer attribute</a>, the “N/A” entry in column four of row three has been annotated
+as follows:</p><blockquote class="blockquote"><p>The “N/A” in this cell is a little bit misleading. It’s marked as
+not applicable because if the external identifier doesn’t specify a public
+identifier then there <em>can’t</em> be <em>both</em> matching
+public and matching system entries. If there’s a matching system entry, it will be used,
+as shown in the second column.
+</p></blockquote></li><li><p>Section <a href="catalogs-1.1.html#attrib.common" class="link">6.1 Common Attributes</a>
+has been annotated as follows:</p><blockquote class="blockquote"><p>The XML Catalogs specification normatively defines the ID attribute as
+having the name <code>id</code>. If you’re validating catalogs with the DTD, you
+must use this attribute. However, this constraint is really imposed by the fact
+that DTDs and namespace don’t mix. The catalog specification allows attributes from
+other namespaces, so you could use <code>xml:id</code> attributes instead.
+</p></blockquote></li><li><p>Appendix A, <a href="catalogs-1.1.html#a.w3cxmlschema" class="link">A W3C
+XML Schema for the XML Catalog</a> has been annotated as follows:</p><blockquote class="blockquote"><p>The simple type defined on line 10 of the schema is flatly wrong. It must include
+a space or the restriction will reject all public identifiers that contain spaces.</p><p>Lines 10 through 17 should be replaced with the following declaration:</p><div class="pre-wrap highlight" db-startinglinenumber="1" db-numberoflines="5"><pre class="language-xml long numbered programlisting verbatim verblines"><span class="line" db-line="1"><span class="ln">1</span><span class="ld"><code>  &lt;xs:simpleType name="pubIdChars"&gt;</code></span></span>
+<span class="line" db-line="2"><span class="ln"></span><span class="ld"><code>    &lt;xs:restriction base="xs:string"&gt;</code></span></span>
+<span class="line" db-line="3"><span class="ln"></span><span class="ld"><code>      &lt;xs:pattern value="[a-zA-Z0-9\-'\(\)+,./:=?;!*#@$_% ]*"/&gt;</code></span></span>
+<span class="line" db-line="4"><span class="ln"></span><span class="ld"><code>    &lt;/xs:restriction&gt;</code></span></span>
+<span class="line" db-line="5"><span class="ln">5</span><span class="ld"><code>  &lt;/xs:simpleType&gt;</code></span></span>
+</pre></div></blockquote></li><li><p>Although not included in the annotations for technical reasons, the editor’s email address
+is no longer valid. To reach the editor, <code class="email">ndw@nwalsh.com</code> is your best bet.
+</p></li></ol></article></main><nav class="bottom"></nav></body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML><html xmlns="http://www.w3.org/1999/xhtml" class="no-js"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><title>XML Catalogs</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://purl.org/dc/elements/1.1/" rel="schema.dc"><meta name="dc.modified" content="2021-06-24T09:28:22Z"><meta name="generator" content="DocBook xslTNG version 1.5.2-SNAPSHOT / 7dfb7462 / SAXON HE 10.5"><link href="/css/docbook.css" rel="stylesheet"><link href="/css/docbook-screen.css" rel="stylesheet"><link href="/css/catalogs.css" rel="stylesheet"><link href="/css/docbook-toc.css" rel="stylesheet"></head><body class="home"><nav class="top"></nav><main><article class="article homepage"><header><h1>XML Catalogs</h1></header><div class="list-of-titles"><div class="lot toc"><div class="title">Table of Contents</div><ul class="toc"><li><a href="#schemas"><span class="number">1<span class="sep">&nbsp;</span></span>The Catalog Schemas</a></li><li><a href="#implementations"><span class="number">2<span class="sep">&nbsp;</span></span>Implementations</a></li></ul></div></div><p>This is the home/a launching page for the
+<a href="catalogs-1.1.html" class="link">XML Catalogs</a>
+specification. XML Catalogs were developed to address an
+interoperability requirement:</p><blockquote class="abstract blockquote"><p>The requirement that all external identifiers in XML documents must
+provide a system identifier has unquestionably been of tremendous
+short-term benefit to the XML community. It has allowed a whole
+generation of tools to be developed without the added complexity of
+explicit entity management.</p><p>However, the interoperability of XML documents has been impeded in
+several ways by the lack of entity management facilities:</p><ol class="orderedlist" type="1"><li><p>External identifiers may require resources that are not always
+available. For example, a system identifier that points to a resource
+on another machine may be inaccessible if a network connection is not
+available.
+</p></li><li><p>External identifiers may require protocols that are not accessible to
+all of the vendors' tools on a single computer system. An external
+identifier that is addressed with the ftp: protocol, for example, is
+not accessible to a tool that does not support that protocol.
+</p></li><li><p>It is often convenient to access resources using system identifiers
+that point to local resources. Exchanging documents that refer to
+local resources with other systems is problematic at best and
+impossible at worst.
+</p></li></ol><p>The problems involved with sharing documents, or packages of
+documents, across multiple systems are large and complex. While there
+are many important issues involved and a complete solution is beyond
+the current scope, the OASIS membership agrees upon the enclosed set
+of conventions to address a useful subset of the complete problem. To
+address these issues, this OASIS Standard defines an entity catalog
+that maps both external identifiers and arbitrary URI references to
+URI references.</p></blockquote><p>XML Catalogs were developed at
+<a href="http://www.oasis-open.org/" class="link">OASIS</a> by the
+<a href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=entity" class="link">OASIS
+Entity Resolution Technical Committee</a>. They are based on earlier work on
+SGML Catalogs.</p><p>This site exists in part because OASIS have disbanded the comments
+mailing list and the useful, stand-alone versions of the schemas now
+return 404.</p><section id="schemas" class="section"><header><h2><span class="number">1<span class="sep">&nbsp;</span></span>The Catalog Schemas</h2></header><p>The OASIS Standard, version 1.1 schemas are available here:</p><ol class="orderedlist" type="1"><li><p><a href="schema/1.1/catalog.xsd" class="link">http://xmlcatalogs.org/schema/1.1/catalog.xsd</a>
+(W3C XML Schema)</p></li><li><p><a href="schema/1.1/catalog.rng" class="link">http://xmlcatalogs.org/schema/1.1/catalog.rng</a>
+(RELAX NG)</p></li><li><p><a href="schema/1.1/catalog.rnc" class="link">http://xmlcatalogs.org/schema/1.1/catalog.rnc</a>
+(RELAX NG Compact Syntax)</p></li><li><p><a href="schema/1.1/catalog.dtd" class="link">http://xmlcatalogs.org/schema/1.1/catalog.dtd</a>
+(XML DTD)</p></li></ol><p><em>Non-normative</em>, experimental version 1.2 schemas are availble here:</p><ol class="orderedlist" type="1"><li><p><a href="schema/1.2beta/catalog.xsd" class="link">http://xmlcatalogs.org/schema/1.2beta/catalog.xsd</a>
+(W3C XML Schema)</p></li><li><p><a href="schema/1.2beta/catalog.rng" class="link">http://xmlcatalogs.org/schema/1.2beta/catalog.rng</a>
+(RELAX NG)</p></li><li><p><a href="schema/1.2beta/catalog.rnc" class="link">http://xmlcatalogs.org/schema/1.2beta/catalog.rnc</a>
+(RELAX NG Compact Syntax)</p></li><li><p><a href="schema/1.2beta/catalog.dtd" class="link">http://xmlcatalogs.org/schema/1.2beta/catalog.dtd</a>
+(XML DTD)</p></li></ol><p>The 1.2beta schemas are identical to the standard 1.1 schemas with one small exception:
+a bug in the definition of <code>pubIdChars</code> simple type in the W3C XML Schema has
+been corrected. In the standard 1.1 schemas, <code>pubIdChars</code> incorrectly excludes
+the space character.</p></section><section id="implementations" class="section"><header><h2><span class="number">2<span class="sep">&nbsp;</span></span>Implementations</h2></header><p>Many XML products come with catalog support built in. If you want to add it to your
+applications, these libraries may help:</p><ol class="orderedlist" type="1"><li><p><a href="https://github.com/ndw/xmlresolver" class="link">XML Resolver</a> is a
+Java implementation.
+</p></li><li><p><a href="https://github.com/ndw/xmlresolvercs" class="link">XML Resolver CS</a> is a
+C# implementation.
+</p></li><li><p><a href="http://xml.apache.org/commons/" class="link">XML Commons</a> at
+<a href="http://www.apache.org/" class="link">Apache</a> is a much older Java
+implementation.</p></li></ol></section></article></main><nav class="bottom"><nav class="tocopen"></nav><nav class="toc"></nav><!-- Hide ToC details from user agents that don’t support JS --><script type="text/html" class="tocopen"><span>[toc]</span></script><script type="text/html" class="toc"><header><span>Table of Contents</span><span class="close"><span>╳</span></span><p class="ptoc-search"><input class="ptoc-search" placeholder="Search" style="width: 80%"></p></header><div><ul class="toc"><li><a href="#schemas"><span class="number">1<span class="sep"> </span></span>The Catalog Schemas</a></li><li><a href="#implementations"><span class="number">2<span class="sep"> </span></span>Implementations</a></li></ul></div></script></nav><script src="/js/persistent-toc.js"></script></body></html>
