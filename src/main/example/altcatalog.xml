@@ -1,0 +1,17 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         xml:base="file:///usr/local/schema/"
+         prefer="public">
+
+  <systemSuffix systemIdSuffix="/sample.dtd" uri="./sample.dtd"/>
+
+  <uriSuffix uriSuffix="/sample.xsd" uri="./sample.xsd"/>
+
+  <uriSuffix uriSuffix="/sample.xsl" uri="./sample.xsl"/>
+
+  <rewriteSystem systemIdStartString="https://xmlresolver.org/ns/sample/"
+                 rewritePrefix="./"/>
+
+  <rewriteURI systemIdStartString="https://xmlresolver.org/ns/sample/"
+              rewritePrefix="./"/>
+
+</catalog>

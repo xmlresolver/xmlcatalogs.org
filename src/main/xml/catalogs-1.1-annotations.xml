@@ -1,0 +1,112 @@
+<article xmlns="http://docbook.org/ns/docbook"
+         xmlns:db="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.2">
+<info>
+<title>XML Catalogs 1.1 Annotations</title>
+<authorgroup>
+<editor>
+  <personname>
+    <firstname>Norman</firstname><surname>Walsh</surname>
+  </personname>
+  <affiliation>
+    <address><email>ndw@nwalsh.com</email></address>
+  </affiliation>
+</editor>
+</authorgroup>
+
+<pubdate>2021-06-24</pubdate>
+
+<copyright>
+<year>2021</year>
+<holder>Norman Walsh</holder></copyright>
+
+<abstract>
+<para>This document summarizes a set of annotations on the
+<link xlink:href="catalogs-1.1.html">XML Catalogs 1.1</link> specification.</para>
+</abstract>
+
+<legalnotice><title>Status</title>
+<para>Norman Walsh is solely responsible for these annotations. They have
+not been reviewed by any OASIS Technical Committee and have no normative standing
+whatsoever.</para>
+</legalnotice>
+
+<revhistory>
+<revision>
+  <date>24 June 2021</date>
+  <authorinitials>ndw</authorinitials>
+  <revremark>First publication.</revremark>
+</revision>
+</revhistory>
+</info>
+
+<para>The following annotations have been added to the
+<citetitle xlink:href="https://xmlcatalogs.org/xmlcatalogs-1.1.html">XML Catalogs 1.1</citetitle>
+specification published at <link xlink:href="https://xmlcatalogs.org/"/>:</para>
+
+<orderedlist>
+<listitem>
+<para>In both tables in <link xlink:href="catalogs-1.1.html#attrib.prefer">4.1.1 The
+prefer attribute</link>, the “N/A” entry in column four of row two has been annotated
+as follows:</para>
+<blockquote>
+<para>The “N/A” in this cell is a little bit misleading. It’s marked as
+not applicable because if the external identifier doesn’t specify a system
+identifier then there <emphasis>can’t</emphasis> be <emphasis>both</emphasis> matching
+public and matching system entries. If there’s a matching public entry, it will be used,
+as shown in the first column.
+</para>
+</blockquote>
+</listitem>
+
+<listitem>
+<para>In both tables in <link xlink:href="catalogs-1.1.html#attrib.prefer">4.1.1 The
+prefer attribute</link>, the “N/A” entry in column four of row three has been annotated
+as follows:</para>
+<blockquote>
+<para>The “N/A” in this cell is a little bit misleading. It’s marked as
+not applicable because if the external identifier doesn’t specify a public
+identifier then there <emphasis>can’t</emphasis> be <emphasis>both</emphasis> matching
+public and matching system entries. If there’s a matching system entry, it will be used,
+as shown in the second column.
+</para>
+</blockquote>
+</listitem>
+
+<listitem>
+<para>Section <link xlink:href="catalogs-1.1.html#attrib.common">6.1 Common Attributes</link>
+has been annotated as follows:</para>
+<blockquote>
+<para>The XML Catalogs specification normatively defines the ID attribute as
+having the name <code>id</code>. If you’re validating catalogs with the DTD, you
+must use this attribute. However, this constraint is really imposed by the fact
+that DTDs and namespace don’t mix. The catalog specification allows attributes from
+other namespaces, so you could use <code>xml:id</code> attributes instead.
+</para>
+</blockquote>
+</listitem>
+
+<listitem>
+<para>Appendix A, <link xlink:href="catalogs-1.1.html#a.w3cxmlschema">A W3C
+XML Schema for the XML Catalog</link> has been annotated as follows:</para>
+<blockquote>
+<para>The simple type defined on line 10 of the schema is flatly wrong. It must include
+a space or the restriction will reject all public identifiers that contain spaces.</para>
+<para>Lines 10 through 17 should be replaced with the following declaration:</para>
+<programlisting language="xml"><![CDATA[  <xs:simpleType name="pubIdChars">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9\-'\(\)+,./:=?;!*#@$_% ]*"/>
+    </xs:restriction>
+  </xs:simpleType>]]></programlisting>
+</blockquote>
+</listitem>
+
+<listitem>
+<para>Although not included in the annotations for technical reasons, the editor’s email address
+is no longer valid. To reach the editor, <email>ndw@nwalsh.com</email> is your best bet.
+</para>
+</listitem>
+</orderedlist>
+
+</article>

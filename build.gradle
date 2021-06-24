@@ -1,0 +1,155 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  configurations.all {
+    resolutionStrategy {
+      force 'xml-apis:xml-apis:1.4.01'
+      force "org.xmlresolver:xmlresolver:3.0.1beta4"
+    }
+  }
+
+  dependencies {
+    classpath 'org.docbook:schemas-docbook:5.2b10a4'
+    classpath 'org.docbook:docbook-xslTNG:1.5.2-SNAPSHOT'
+    classpath 'org.xmlresolver:xmlresolver:3.0.1beta4'
+  }
+}
+
+plugins {
+  id 'com.nwalsh.gradle.saxon.saxon-gradle' version '0.9.3'
+  id 'com.nwalsh.gradle.relaxng.validate' version '0.0.8'
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+configurations {
+  docbook
+}
+
+dependencies {
+  docbook (
+    [group: 'org.docbook', name: 'schemas-docbook', version: '5.2b10a4'],
+    [group: 'org.docbook', name: 'docbook-xslTNG', version: '1.5.2-SNAPSHOT']
+  )
+}
+
+import com.nwalsh.gradle.saxon.SaxonXsltTask
+import com.nwalsh.gradle.relaxng.validate.RelaxNGValidateTask
+
+defaultTasks "website"
+
+// ======================================================================
+
+saxon.configure {
+  entityResolverClass "org.xmlresolver.Resolver"
+  uriResolverClass "org.xmlresolver.Resolver"
+  sourceSaxParser "org.xmlresolver.tools.ResolvingXMLReader"
+  stylesheetSaxParser "org.xmlresolver.tools.ResolvingXMLReader"
+  initializer 'org.docbook.xsltng.extensions.Register'
+}
+
+// ======================================================================
+
+task copyResources() {
+  def dbjar = null
+  configurations.docbook.each { path ->
+    if (path.toString().contains("docbook-xslTNG")) {
+      dbjar = path
+    }
+  }
+
+  doFirst {
+    copy {
+      into "${buildDir}/website"
+      from ("${projectDir}/src/main/resources")
+    }
+  }
+
+  doLast {
+    if (dbjar == null) {
+      throw new GradleException("Failed to locate DocBook xslTNG jar file")
+    }
+    copy {
+      into "${buildDir}/website"
+      from ({ zipTree(dbjar.toString()) }) {
+        include "org/docbook/xsltng/resources/**"
+      }
+      eachFile { fileCopyDetails ->
+        def originalPath = fileCopyDetails.path
+        fileCopyDetails.path = originalPath.replace('org/docbook/xsltng/resources/', '')
+      }
+    }
+  }
+
+  doLast {
+    delete "${buildDir}/website/org"
+  }
+}
+
+// ======================================================================
+
+task website(dependsOn: ["copyResources"]) {
+  // nop
+}
+
+// ======================================================================
+["index.xml", "catalogs-1.1.xml", "catalogs-1.1-annotations.xml"].each { spec ->
+  Task t = task "validate_${spec}"(type: RelaxNGValidateTask) {
+    input "${projectDir}/src/main/xml/${spec}"
+    schema "${projectDir}/tools/catschema.rnc"
+    output "${buildDir}/valid/${spec}"
+  }
+
+  t = task "transform_${spec}"(type: SaxonXsltTask,
+                           dependsOn: ["validate_${spec}", "copyResources"]) {
+    inputs.files fileTree(dir: "${projectDir}/tools")
+
+    if (spec == "catalogs-1.1.xml") {
+      inputs.files "${projectDir}/src/main/xml/specanno.xml"
+    }
+
+    input "${projectDir}/src/main/xml/${spec}"
+    output "${buildDir}/website/${spec.replace('.xml', '.html')}"
+
+    if (spec.contains("catalogs-1.1")) {
+      stylesheet "${projectDir}/tools/cathtml.xsl"
+    } else {
+      stylesheet "${projectDir}/tools/docbook.xsl"
+    }
+
+    if (spec == "catalogs-1.1.xml") {
+      parameters (
+        'annotation-collection': "file://${projectDir}/src/main/xml/specanno.xml"
+      )
+    }
+
+    if (spec == "catalogs-1.1-annotations.xml") {
+      parameters (
+        'persistent-toc': 'false'
+      )
+    }
+  }
+  website.dependsOn t
+}
+
+// ======================================================================
+
+task helloWorld() {
+  doLast {
+    println("Hello, world.")
+    configurations.each { c ->
+      println(c.name)
+    }
+    /*
+    configurations.runtime.resolve().each { path ->
+      println(path)
+    }
+     */
+  }
+}

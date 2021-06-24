@@ -1,0 +1,134 @@
+/* catalogs.css */
+
+@media screen {
+    @import url("https://fonts.googleapis.com/css?family=B612+Mono&display=swap");
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+    @import url("https://fonts.googleapis.com/css?family=Noto+Serif&display=swap");
+}
+
+:root {
+    --symbol-fonts: "Arial Unicode", "Apple Symbols", "Symbol", "Symbola_hint";
+    --body-family: "Noto Serif", serif, var(--symbol-fonts);
+    --title-family: "Noto Sans", sans-serif, var(--symbol-fonts);
+    --mono-family: "B612 Mono", monospace, var(--symbol-fonts);
+}
+
+html {
+    font-size: 16pt;
+}
+
+body {
+    padding-bottom: 4rem;
+}
+
+.article > header {
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #cacaca;
+}
+
+.article > header .abstract {
+    border: none;
+    margin: 0;
+    padding: inherit;
+}
+
+header dl dt {
+    padding-top: 0.5em;
+}
+
+header dl dd div > p:first-child,
+header dl dd > p:first-child {
+    margin-top: 0;
+}
+
+.titlepage {
+    border-bottom: 1px solid #666666;
+}
+
+.titlepage dl dt {
+    font-weight: 600;
+    font-family: var(--title-family);
+}
+
+.toc code {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.toc a {
+    text-decoration: none;
+}
+
+code {
+    background-color: inherit;
+    font-size: 100%;
+}
+
+a code {
+    border: none;
+}
+
+span.datatype {
+    font-style: italic;
+}
+
+nav.tocopen span {
+    display: none;
+}
+
+nav.tocopen:before {
+  content: "☰";
+}
+
+h1 code, h2 code, h3 code,
+h4 code, h5 code, h6 code {
+    background-color: inherit;
+    border: none;
+    font-size: 110%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #777777;
+}
+
+.table-footnotes {
+    margin-top: 0;
+}
+
+.element-syntax {
+    border: 2px solid black;
+    padding: 0.5em;
+}
+
+.disclaimer {
+    background-color: #fedddd;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    border-radius: 1em;
+}
+
+article > a.annomark,
+.section > a.annomark,
+div.appendix > a.annomark {
+    float: left;
+    display: inline-block;
+    width: 0;
+    margin-left: -2em;
+}
+
+.popup-annotation-body {
+    width: 85%;
+    min-height: 60%;
+    max-height: 90%;
+}
+
+.homepage .list-of-titles {
+    display: none;
+}

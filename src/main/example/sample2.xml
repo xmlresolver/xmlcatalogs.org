@@ -1,0 +1,10 @@
+<book xmlns="http://xmlresolver.com/ns/sample"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Another sample book</title>
+<article>
+<p>This <link xlink:href="http://xmlresolver.org/ns/sample">book</link>
+is also very short.</p>
+<p>It differs from <link xlink:href="sample.xml">sample.xml</link>
+in that it has no DOCTYPE declaration of XML Schema location hints.</p>
+</article>
+</book>

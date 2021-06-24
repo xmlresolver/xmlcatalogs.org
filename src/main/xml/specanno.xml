@@ -1,0 +1,68 @@
+<article xmlns="http://docbook.org/ns/docbook"
+         xmlns:db="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.0">
+<title>XML Catalogs 1.1 Annotations</title>
+
+<annotation annotates="xml-catalogs">
+<info>
+<title>An annotation</title>
+</info>
+<para>Yes, this is an example of an annotation.</para>
+</annotation>
+
+<annotation annotates="xpath:(//db:informaltable[position() = 1 or position() = 2])
+                             /db:tgroup/db:tbody/db:row[1]/db:entry[4]"
+            role="after">
+<info>
+<title>Catalog contains both matching public and system entries</title>
+</info>
+<para>The “N/A” in this cell is a little bit misleading. It’s marked as
+not applicable because if the external identifier doesn’t specify a system
+identifier then there <emphasis>can’t</emphasis> be <emphasis>both</emphasis> matching
+public and matching system entries. If there’s a matching public entry, it will be used,
+as shown in the first column.
+</para>
+</annotation>
+
+<annotation annotates="xpath:(//db:informaltable[position() = 1 or position() = 2])
+                             /db:tgroup/db:tbody/db:row[2]/db:entry[4]"
+            role="after">
+<info>
+<title>Catalog contains a matching system entry but not a matching public entry</title>
+</info>
+<para>The “N/A” in this cell is a little bit misleading. It’s marked as
+not applicable because if the external identifier doesn’t specify a public
+identifier then there <emphasis>can’t</emphasis> be <emphasis>both</emphasis> matching
+public and matching system entries. If there’s a matching system entry, it will be used,
+as shown in the second column.
+</para>
+</annotation>
+
+<annotation annotates="attrib.common">
+<info>
+<title>Use of xml:id</title>
+</info>
+<para>The XML Catalogs specification normatively defines the ID attribute as
+having the name <code>id</code>. If you’re validating catalogs with the DTD, you
+must use this attribute. However, this constraint is really imposed by the fact
+that DTDs and namespace don’t mix. The catalog specification allows attributes from
+other namespaces, so you could use <code>xml:id</code> attributes instead.
+</para>
+</annotation>
+
+<annotation annotates="a.w3cxmlschema">
+<info>
+<title>Error in pubIdChars</title>
+</info>
+<para>The simple type defined on line 10 of the schema is flatly wrong. It must include
+a space or the restriction will reject all public identifiers that contain spaces.</para>
+<para>Lines 10 through 17 should be replaced with the following declaration:</para>
+<programlisting language="xml"><![CDATA[  <xs:simpleType name="pubIdChars">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9\-'\(\)+,./:=?;!*#@$_% ]*"/>
+    </xs:restriction>
+  </xs:simpleType>]]></programlisting>
+</annotation>
+
+</article>

@@ -1,0 +1,41 @@
+default namespace db = "http://docbook.org/ns/docbook"
+namespace rng = "http://relaxng.org/ns/structure/1.0"
+namespace s = "http://purl.oclc.org/dsdl/schematron"
+namespace xlink = "http://www.w3.org/1999/xlink"
+namespace e = "http://www.w3.org/1999/XSL/Spec/ElementSyntax"
+
+include "https://docbook.org/xml/5.2/rng/docbookxi.rnc" {
+    db.technical.blocks |= e.element.syntax
+}
+
+e.element.syntax = element e:element-syntax {
+                       attribute name { text }
+                     & (e.attribute*, (e.choice|e.empty))
+                   }
+
+e.attribute = element e:attribute {
+                  attribute name { text }
+                & attribute required { "yes" | "no" }?
+                & (e.data.type | e.constant+)
+              }
+
+e.data.type = element e:data-type {
+                  attribute name { text }
+              }
+
+e.constant = element e:constant {
+                 attribute value { text }
+             }
+
+e.choice = element e:choice {
+               attribute repeat { "one-or-more" | "zero-or-more" }?
+             & e.element+
+           }
+
+e.element = element e:element {
+                attribute name { text }
+            }
+
+e.empty = element e:empty {
+              empty
+            }

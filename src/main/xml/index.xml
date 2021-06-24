@@ -1,0 +1,116 @@
+<article xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         role="homepage"
+         version="5.2">
+<title>XML Catalogs</title>
+
+<para>This is the home/a launching page for the
+<link xlink:href="catalogs-1.1.html">XML Catalogs</link>
+specification. XML Catalogs were developed to address an
+interoperability requirement:</para>
+
+<blockquote role="abstract">
+<para>The requirement that all external identifiers in XML documents must
+provide a system identifier has unquestionably been of tremendous
+short-term benefit to the XML community. It has allowed a whole
+generation of tools to be developed without the added complexity of
+explicit entity management.</para>
+
+<para>However, the interoperability of XML documents has been impeded in
+several ways by the lack of entity management facilities:</para>
+
+<orderedlist>
+<listitem><para>External identifiers may require resources that are not always
+available. For example, a system identifier that points to a resource
+on another machine may be inaccessible if a network connection is not
+available.
+</para></listitem>
+<listitem><para>External identifiers may require protocols that are not accessible to
+all of the vendors' tools on a single computer system. An external
+identifier that is addressed with the ftp: protocol, for example, is
+not accessible to a tool that does not support that protocol.
+</para></listitem>
+<listitem><para>It is often convenient to access resources using system identifiers
+that point to local resources. Exchanging documents that refer to
+local resources with other systems is problematic at best and
+impossible at worst.
+</para></listitem>
+</orderedlist>
+
+<para>The problems involved with sharing documents, or packages of
+documents, across multiple systems are large and complex. While there
+are many important issues involved and a complete solution is beyond
+the current scope, the OASIS membership agrees upon the enclosed set
+of conventions to address a useful subset of the complete problem. To
+address these issues, this OASIS Standard defines an entity catalog
+that maps both external identifiers and arbitrary URI references to
+URI references.</para>
+</blockquote>
+
+<para>XML Catalogs were developed at
+<link xlink:href="http://www.oasis-open.org/">OASIS</link> by the
+<link xlink:href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=entity">OASIS
+Entity Resolution Technical Committee</link>. They are based on earlier work on
+SGML Catalogs.</para>
+
+<para>This site exists in part because OASIS have disbanded the comments
+mailing list and the useful, stand-alone versions of the schemas now
+return 404.</para>
+
+<section xml:id="schemas">
+<title>The Catalog Schemas</title>
+
+<para>The OASIS Standard, version 1.1 schemas are available here:</para>
+
+<orderedlist>
+<listitem><para><link xlink:href="schema/1.1/catalog.xsd">http://xmlcatalogs.org/schema/1.1/catalog.xsd</link>
+(W3C XML Schema)</para></listitem>
+<listitem><para><link xlink:href="schema/1.1/catalog.rng">http://xmlcatalogs.org/schema/1.1/catalog.rng</link>
+(RELAX NG)</para></listitem>
+<listitem><para><link xlink:href="schema/1.1/catalog.rnc">http://xmlcatalogs.org/schema/1.1/catalog.rnc</link>
+(RELAX NG Compact Syntax)</para></listitem>
+<listitem><para><link xlink:href="schema/1.1/catalog.dtd">http://xmlcatalogs.org/schema/1.1/catalog.dtd</link>
+(XML DTD)</para></listitem>
+</orderedlist>
+
+<para><emphasis>Non-normative</emphasis>, experimental version 1.2 schemas are availble here:</para>
+
+<orderedlist>
+<listitem><para><link xlink:href="schema/1.2beta/catalog.xsd">http://xmlcatalogs.org/schema/1.2beta/catalog.xsd</link>
+(W3C XML Schema)</para></listitem>
+<listitem><para><link xlink:href="schema/1.2beta/catalog.rng">http://xmlcatalogs.org/schema/1.2beta/catalog.rng</link>
+(RELAX NG)</para></listitem>
+<listitem><para><link xlink:href="schema/1.2beta/catalog.rnc">http://xmlcatalogs.org/schema/1.2beta/catalog.rnc</link>
+(RELAX NG Compact Syntax)</para></listitem>
+<listitem><para><link xlink:href="schema/1.2beta/catalog.dtd">http://xmlcatalogs.org/schema/1.2beta/catalog.dtd</link>
+(XML DTD)</para></listitem>
+</orderedlist>
+
+<para>The 1.2beta schemas are identical to the standard 1.1 schemas with one small exception:
+a bug in the definition of <code>pubIdChars</code> simple type in the W3C XML Schema has
+been corrected. In the standard 1.1 schemas, <code>pubIdChars</code> incorrectly excludes
+the space character.</para>
+</section>
+
+<section xml:id="implementations">
+<title>Implementations</title>
+
+<para>Many XML products come with catalog support built in. If you want to add it to your
+applications, these libraries may help:</para>
+
+<orderedlist>
+<listitem>
+<para><link xlink:href="https://github.com/ndw/xmlresolver">XML Resolver</link> is a
+Java implementation.
+</para></listitem>
+<listitem>
+<para><link xlink:href="https://github.com/ndw/xmlresolvercs">XML Resolver CS</link> is a
+C# implementation.
+</para></listitem>
+<listitem>
+<para><link xlink:href="http://xml.apache.org/commons/">XML Commons</link> at
+<link xlink:href="http://www.apache.org/">Apache</link> is a much older Java
+implementation.</para></listitem>
+</orderedlist>
+</section>
+</article>
