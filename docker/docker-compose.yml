@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-    xtserver:
+    xmlcat_server:
       image: httpd:2.4
       container_name: xmlcatdotorg
       ports:
-        - 8818:80
+        - 8819:80
       working_dir: /src
       volumes:
         - ../build/website:/usr/local/apache2/htdocs
       stdin_open: true
       tty: true
       networks:
-        - external_net
+        - external_net_cat
 
 networks:
-  external_net: {}
+  external_net_cat: {}
