@@ -1,28 +1,22 @@
 buildscript {
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url "https://dev.saxonica.com/maven" }
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-  }
-
   configurations.all {
     resolutionStrategy {
-      force 'xml-apis:xml-apis:1.4.01'
-      force "org.xmlresolver:xmlresolver:3.0.1beta5"
+      force 'xml-apis:xml-apis:1.4.01',
+        "org.xmlresolver:xmlresolver:4.4.3"
     }
   }
 
   dependencies {
-    classpath 'org.docbook:schemas-docbook:5.2b10a4'
-    classpath 'org.docbook:docbook-xslTNG:1.5.2-SNAPSHOT'
-    classpath 'org.xmlresolver:xmlresolver:3.0.1beta5'
+    classpath group: saxonGroup, name: saxonEdition, version: saxonVersion
+    classpath group: 'org.docbook', name: 'schemas-docbook', version: docbookVersion
+    classpath group: 'org.docbook', name: 'docbook-xslTNG', version: xslTNGversion
   }
 }
 
 plugins {
   id 'com.nwalsh.gradle.saxon.saxon-gradle' version '0.9.3'
   id 'com.nwalsh.gradle.relaxng.validate' version '0.0.8'
+  id 'com.nwalsh.gradle.docker.container' version '0.0.3'
 }
 
 repositories {
@@ -38,17 +32,35 @@ configurations {
 
 dependencies {
   docbook (
-    [group: 'org.docbook', name: 'schemas-docbook', version: '5.2b10a4'],
-    [group: 'org.docbook', name: 'docbook-xslTNG', version: '1.5.2-SNAPSHOT']
+    [group: 'org.docbook', name: 'schemas-docbook', version: docbookVersion],
+    [group: 'org.docbook', name: 'docbook-xslTNG', version: xslTNGversion],
+    [group: 'org.xmlresolver', name: 'xmlresolver', version: xmlresolverVersion]
   )
+}
+
+configurations.all {
+  resolutionStrategy {
+    force 'xml-apis:xml-apis:1.4.01',
+      "${saxonGroup}:${saxonEdition}:${saxonVersion}",
+      "org.xmlresolver:xmlresolver:4.4.3"
+  }
 }
 
 import com.nwalsh.gradle.saxon.SaxonXsltTask
 import com.nwalsh.gradle.relaxng.validate.RelaxNGValidateTask
+import com.nwalsh.gradle.docker.DockerContainer
+
+ext {
+  c_xmlcat = "xmlcatdotorg"
+}
 
 defaultTasks "website"
 
 // ======================================================================
+
+docker_container.configure {
+  workingDir = "docker"
+}
 
 saxon.configure {
   entityResolverClass "org.xmlresolver.Resolver"
@@ -140,6 +152,29 @@ task website(dependsOn: ["copyResources"]) {
     }
   }
   website.dependsOn t
+}
+
+// ======================================================================
+
+task dockerup() {
+  doLast {
+    if (!DockerContainer.running(c_xmlcat)) {
+      DockerContainer.compose {
+        command = "up"
+        args = ["-d"]
+      }
+    }
+  }
+}
+
+task dockerdown() {
+  doLast {
+    if (DockerContainer.running(c_xmlcat)) {
+      DockerContainer.compose {
+        command = "down"
+      }
+    }
+  }
 }
 
 // ======================================================================
