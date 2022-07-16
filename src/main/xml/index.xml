@@ -111,6 +111,14 @@ C# implementation.
 <para><link xlink:href="http://xml.apache.org/commons/">XML Commons</link> at
 <link xlink:href="http://www.apache.org/">Apache</link> is a much older Java
 implementation.</para></listitem>
+<listitem>
+<para><link xlink:href="https://github.com/vincentml/xml-catalog-resolver">XML
+Catalog Resolver in XQuery</link> runs on
+<link xlink:href="https://basex.org/">BaseX</link>.</para>
+</listitem>
+<listitem>
+<para><link xlink:href="https://github.com/transpect/xslt-util/tree/master/xslt-based-catalog-resolver">XSLT-based catalog resolver</link> is an XSLT implementation.</para>
+</listitem>
 </orderedlist>
 </section>
 </article>
