@@ -1,2 +1,5 @@
-# xmlcatalogs.org
-The XMLCatalogs.org website
+Moved to Codeberg
+
+To follow this project, please see https://codeberg.org/XmlResolver/xmlcatalogs.org
+
+To retrieve the last state of this project on GitHub, roll back one commit.
